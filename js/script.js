@@ -15,3 +15,8 @@ propertyText(propertyNumbers);
 },5000);
 
 propertyText(propertyNumbers);
+
+
+
+
+
