@@ -1,99 +1,73 @@
 
-
 *
 { 
-    margin: 0;
-    padding: 0;
-
+margin: 0;
+padding: 0;
 }
+
 a {
   color: #ffffff8a;
   text-decoration: none;
 }
+
 html,
 body {
-    color: #ffffff;
-    background-color: rgb(59, 59, 60);
-    font-family: 'Courier New', monospace;
-    overflow-x: hidden;
-    font-weight:300;
+ color: #ffffff;
+background-color: rgb(59, 59, 60);
+font-family: 'Courier New', monospace;
+overflow-x: hidden;
+font-weight:300;
 }
+
 
 #head
-{
-
-    position: absolute;
-   transform: translateX(-50%);
-   width: 100%;
-   left: 70%;
-    top: 20%;
- 
- 
-padding: 1%;
+{ 
+position: absolute;
+ width: 100%;
+ top: 20%;
+padding: 0%;
 background: rgba(233, 0, 0, 0);
-
-z-index: 1 ;
-
-
-
-
+z-index: 1;
 }
-
 .textHead
 {
-    margin-top: 40px !important;
+margin-top: 40px !important;
 }
-
 #propertyContent
 {
-    
-    
-    width: 100%;
-    display: flex;
-  margin-bottom: 2%;
-  margin-top: 2%;
-    overflow: hidden;
-    
+ width: 100%;
+ display: flex;
+ margin-bottom: 2%;
+ margin-top: 2%;
+ overflow: hidden;
 }
+
 
 .property
 {
-    position: absolute;
-width: 500px;
-  height: 200px;
-
-  transition: transform 3s ease, opacity 0.3s ease;
+position: absolute;
+width:0%;
+height: 200px;
+transition: transform 3s ease, opacity 0.3s ease;
 }
+
 
 #head::before,
 #head::after
 {
-    content: "";
-    position: fixed;
-    border-radius: inherit;
+content: "";
+position: fixed;
+border-radius: inherit;
 }
-
-
 
 #head::after
 {
-    inset: -1rem;
-    background: rgba(0, 0, 0, 0);
-     transform: translateZ(-50px);
-
-
+inset: -1rem;
+background: rgba(0, 0, 0, 0);
+transform: translateZ(-50px);
 }
-
-
-
-
-
-
-
-
 pre
 {
-
 font-size: 20px;
 font-weight: bold;
 width: 30%;
@@ -106,49 +80,19 @@ margin-left: 2%;
 margin-right: 2%;
 border-radius: 1rem;
 position: relative;
-
 z-index: 998;
-
 }
-
-
-
-
-
-
 /* gradient thingy */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1150px) {
      pre
     {
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 57%;
+        width: 50%;
         text-align: center;
         margin: 0px 0;
         margin-bottom: 0%;
         margin-top: 0%;
     }
-
     #head
     {
         position: relative;
@@ -160,33 +104,33 @@ z-index: 998;
         margin-bottom: 6.5%;
         margin-top: 6.5%;
     }
-
+    .textHead
+    {
+        margin-top: 10px !important;
+        margin: 15px;
+    }
 
     #head::after
-{
-   
-    background: rgba(0, 0, 0, 0);
-   
-
+{   
+ 
+background: rgba(0, 0, 0, 0);
 }
 }
 @media screen and (max-width: 700px) {
-
     pre
     {
+        
         font-size: 15px;
-        width: 70%;
+        width: 50%;
     
     }
 }
-
-
 @media screen and (max-width: 500px) {
 
-    pre
+    /* pre
     {
         font-size: 12px;
-        width: 78%;
+        width: 50%;
         background: hsla(221, 44%, 7%, 0);
         margin-bottom: 1px;
         margin-top: 1px;
@@ -194,35 +138,22 @@ z-index: 998;
         margin-right: 1px;
 
         
-    }
-
-
+    } */
     pre::after
 {
-    
     background: hsla(221, 44%, 7%, 0);
-   
-
 }
-
 #propertyContent
-{
-    
-  margin-bottom: 1px;
-  margin-top: 1px;
-
-    
+{    
+margin-bottom: 1px;
+margin-top: 1px;   
 }
-
 }
-
-
 @media screen and (max-width: 300px) {
 
     pre
     {
         font-size: 10px;
-        width: 90%;
+        width: 50%;
     }
 }
-
