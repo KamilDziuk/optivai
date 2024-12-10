@@ -10,15 +10,12 @@ try
 $title_post = $_POST['title_post'];
 
 
-$sql = "DELETE FROM blog WHERE title_post = '$title_post'";
-$tmts = $pdo -> prepare($sql);
+$sql = "DELETE FROM blog WHERE title_post = :title_post";
+$stmt = $pdo -> prepare($sql);
 
-$tmts -> execute();
+$stmt -> bindParam(':title_post', $title_post);
 
-$blog = $tmts -> fetchAll(PDO::FETCH_ASSOC);
-
-
-
+$stmt -> execute();
 
 }
 catch(PDOException $e)

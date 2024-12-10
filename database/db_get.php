@@ -3,11 +3,11 @@ require "config/config.php";
 try{
 $sql = "SELECT * FROM  blog";
 
-$tmts = $pdo -> prepare($sql);
+$stmt = $pdo -> prepare($sql);
 
-$tmts -> execute();
+$stmt -> execute();
 
-$blog = $tmts -> fetchAll(PDO::FETCH_ASSOC);
+$blog = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 }
 catch( PDOException $e)
