@@ -27,7 +27,8 @@
         <img src="optivAI1.jpg">
       </div>
       <div class="text">
-        <h1>Text example, text example, text example, text example, text example, text example, text example </h1>
+        <h1>
+        Optivai is an innovative AI company specializing in cutting-edge solutions for businesses across various industries. Their technologies streamline operations, enhance decision-making, and drive growth through intelligent automation.</h1>
       </div>
     </div>
 
@@ -35,10 +36,10 @@
     <div class="container1">
  
       <div class="text1">
-        <h1>Text example, text example, text example, text example, text example, text example, text example </h1>
+        <h1>OptivAI is an innovative AI company specializing in cutting-edge solutions for businesses across various industries. Their technologies enhance efficiency, drive automation, and unlock new opportunities for growth.</h1>
       </div>
       <div class="image1">
-        <img src="optivAI1.jpg">
+        <img src="optivAI2.jpg">
       </div>
     </div>
 
@@ -64,7 +65,7 @@ padding-left:10%;
 
   
     padding-right:10%;
-  font-size:17px;
+  font-size:12px;
 
 }
 
@@ -85,7 +86,7 @@ padding-top: 100px !important ;
 
   
     padding-left:10%;
-  font-size:17px;
+  font-size:12px;
 
 }
 
@@ -123,24 +124,37 @@ display: block;
 
 .text1 {
 
-    margin-top: 70%;
+    margin-top: 50%;
 padding-left:0% !important;
 font-size:13px;
 
 }
 }
-@media screen and (max-width:300px) {
+@media screen and (max-width:400px) {
 
 
     .text1 {
 
-margin-top: 90%;
+margin-top: 100%;
 padding-left:0% !important;
 font-size:13px;
 
 }
 
     
+}
+
+@media screen and (max-width:300px) {
+
+
+.text1 {
+
+margin-top: 110%;
+
+
+}
+
+
 }
   </style>
     <!-- head section end-->
