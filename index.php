@@ -14,9 +14,9 @@
 
 
 
-
+<h2 class="textHead">Optivai</h2>
     <div id="propertyContent">
-    <h2 class="textHead">Optivai</h2>
+
     <pre class="language-css" tabindex="0">
     <code class="language-css"><span class="token property">Test1</span><span class="token property">Test2</span><span class="token property">Test3</span></code></pre>
     </section>
