@@ -45,9 +45,9 @@
 
     <style>
   .container {
-position: absolute;
+position: relative;
 padding-top: 100px !important ;
-    margin-top: 20%;
+    margin-top: 30%;
   display: flex;
   align-items: center;
   justify-content: center
@@ -63,18 +63,18 @@ padding-left:10%;
 
 .text {
 
-  
+  position: relative;
     padding-right:10%;
   font-size:12px;
-
+  padding: 2%
 }
 
 
 
 .container1 {
-position: absolute;
+position: relative;
 padding-top: 100px !important ;
-    margin-top: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center
@@ -84,10 +84,10 @@ padding-top: 100px !important ;
 
 .text1 {
 
-  
+  position: relative;
     padding-left:10%;
   font-size:12px;
-
+padding: 2%;
 }
 
 @media screen and (max-width:800px) {
@@ -124,7 +124,7 @@ display: block;
 
 .text1 {
 
-    margin-top: 50%;
+ 
 padding-left:0% !important;
 font-size:13px;
 
@@ -135,7 +135,6 @@ font-size:13px;
 
     .text1 {
 
-margin-top: 100%;
 padding-left:0% !important;
 font-size:13px;
 
@@ -147,12 +146,7 @@ font-size:13px;
 @media screen and (max-width:300px) {
 
 
-.text1 {
 
-margin-top: 110%;
-
-
-}
 
 
 }

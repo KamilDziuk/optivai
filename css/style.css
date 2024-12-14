@@ -13,7 +13,7 @@ a {
 html,
 body {
  color: #ffffff;
-background-color: rgb(59, 59, 60);
+background-color: rgb(30, 30, 30);
 font-family: 'Courier New', monospace;
 overflow-x: hidden;
 font-weight:300;
@@ -36,7 +36,7 @@ z-index: 1;
 .textHead
 {
     font-size: 40px;
-
+  
 }
 #propertyContent
 {
@@ -105,8 +105,7 @@ z-index: 998;
     #head
     {
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+
         width: 97%;
         text-align: center;
         margin: 0px 0;
@@ -116,8 +115,9 @@ z-index: 998;
     .textHead
     {
        
-  
-        margin: 15px;
+        transform: translateX(-20%);
+        left: 50%;
+        
     }
 
     #head::after
@@ -130,6 +130,7 @@ background: rgba(0, 0, 0, 0);
 
     .textHead
 {
+
         font-size: 20px;
 }
     pre
