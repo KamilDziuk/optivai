@@ -14,7 +14,7 @@
 
 
 
-<h2 class="textHead">Optivai</h2>
+<h2 class="textHead">OptivAI</h2>
     <div id="propertyContent">
 
     <pre class="language-css" tabindex="0">
