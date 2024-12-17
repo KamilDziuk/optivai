@@ -22,30 +22,6 @@
     </section>
 
     
-    <div class="container">
-      <div class="image">
-        <img src="optivAI1.jpg">
-      </div>
-      <div class="text">
-        <h1>
-        Optivai is an innovative AI company specializing in cutting-edge solutions for businesses across various industries. Their technologies streamline operations, enhance decision-making, and drive growth through intelligent automation.</h1>
-      </div>
-    </div>
-
-    
-    <div class="container1">
- 
-      <div class="text1">
-        <h1>OptivAI is an innovative AI company specializing in cutting-edge solutions for businesses across various industries. Their technologies enhance efficiency, drive automation, and unlock new opportunities for growth.</h1>
-      </div>
-      <div class="image1">
-        <img src="optivAI2.jpg">
-      </div>
-    </div>
-<br>
-<br>
-<br>
-
     <style>
   .container {
 position: relative;
