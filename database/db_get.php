@@ -1,13 +1,13 @@
 <?php
 require "config/config.php";
 try{
-$sql = "SELECT * FROM  blog";
+$sql = "SELECT * FROM  optivai";
 
 $stmt = $pdo -> prepare($sql);
 
 $stmt -> execute();
 
-$blog = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+$optivai = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 }
 catch( PDOException $e)

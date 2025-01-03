@@ -1,17 +1,17 @@
 <?php
 require "config/config.php";
 try{
-    $title_post = $_POST['title_post'];
-    $main_post = $_POST['main_post'];
-
-$sql = "INSERT INTO blog (title_post, main_post ) VALUES (:title_post, :main_post)";
+    $thread_id		 = $_POST['thread_id		'];
+    $conversation = $_POST['conversation	'];
+    $timestamp = $_POST['timestamp'];
+$sql = "INSERT INTO optivai (thread_id		, conversation,timestamp	 ) VALUES (:thread_id		, :conversation , :timestamp	)";
 
 $stmt = $pdo -> prepare($sql);
 
 
-$stmt ->  bindParam(':title_post', $title_post);
-$stmt ->  bindParam(':main_post', $main_post);
-
+$stmt ->  bindParam(':thread_id		', $thread_id		);
+$stmt ->  bindParam(':conversation	', $conversation	);
+$stmt ->  bindParam(':timestamp	', $timestamp	);
 
 $stmt -> execute();
 

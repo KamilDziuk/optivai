@@ -7,13 +7,17 @@ try
 {
 
 
-$title_post = $_POST['title_post'];
+$title_post = $_POST['conversation'];
 
 
-$sql = "DELETE FROM blog WHERE title_post = :title_post";
+$sql = "DELETE FROM optivai WHERE conversation = :conversation";
 $stmt = $pdo -> prepare($sql);
 
-$stmt -> bindParam(':title_post', $title_post);
+
+
+$stmt ->  bindParam(':conversation	', $conversation	);
+
+
 
 $stmt -> execute();
 
