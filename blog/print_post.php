@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/conversation_ass.css">
 
-    <title>Post</title>
+    <title>Blog</title>
 </head>
 <body>
   
@@ -20,7 +20,7 @@
 </div>
 
 <?php
- require_once "get_post.php";
+ require_once "db_queries/get_sql.php";
 
 
 ?>
@@ -36,8 +36,8 @@
 let printPost = document.querySelector("#printPost")
 let getPost = post.map( content => {
    return `${content.title }<br>
-   ${content.post }<br>
-   ${content.date }<br>`;
+   ${content.main_text }<br>
+   ${content.auto_date }<br>`;
 }
 )
 printPost.innerHTML = getPost;
