@@ -14,7 +14,7 @@ $stmt -> execute();
 }
 catch(PDOException $e)
 {
- echo "<br>". $e -> getMessage(). "<br>";
+ echo "<br>". $e -> getMessage(). "<br> ";
 }
 ?>
 

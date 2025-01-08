@@ -37,7 +37,7 @@ let printPost = document.querySelector("#printPost")
 let getPost = post.map( content => {
    return `${content.title }<br>
    ${content.main_text }<br>
-   ${content.auto_date }<br>`;
+   ${content.auto_date }<br> `;
 }
 )
 printPost.innerHTML = getPost;

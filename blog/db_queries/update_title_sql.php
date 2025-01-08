@@ -1,6 +1,6 @@
 <?php
 require "../../db/config/config.php";
-header('Location: ../configuration_post.php'); 
+header('Location: ../configuration_post.php '); 
 try{
 $title = $_POST['title'];
 $id_post = $_POST['id_post'];

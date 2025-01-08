@@ -25,7 +25,7 @@
 ?>
 
 <h1> Adding post</h1>
-<form action="db_queries/add_sql.php" method="POST">
+<form action="db_queries/add_sql.php" method="POST" >
 <input type="text" class="title" name="title" placeholder="Tytle">
 <input type="text" class="main_text" name="main_text" placeholder="Main text">
 <input type="submit" value="Add post">
