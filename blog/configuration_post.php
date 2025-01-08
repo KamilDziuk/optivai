@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/conversation_ass.css">
+    <link rel="stylesheet" type="text/css" href="../css/post_style.css">
     
     <title> Post configuration</title>
 </head>
@@ -12,7 +12,7 @@
 
 
 
-<h3>Post</h3>
+
 <div id="printPost">
 </div>
 
@@ -65,9 +65,8 @@ let getPost = post.map( content => {
    return ` <br>Id: ${content.id_post }<br>
    Title: ${content.title }<br>
    Main text: ${content.main_text }<br>
-   Date: ${content.auto_date } <br>`;
-}
-).join('\n')
+   Date: ${content.auto_date } <br>`
+}).join('\n');
 printPost.innerHTML = getPost;
 
 

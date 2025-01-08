@@ -1,0 +1,58 @@
+*
+{ 
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    color: #ffffff;
+    background-color: rgb(5, 5, 55);
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+    font-weight:300;
+}
+
+
+
+#printPostBox
+{
+transform: translateX(-40%);
+left: 50%;
+width:40%;
+padding: 2%;
+       
+        position: absolute;
+     
+    }
+    #printPost
+    {
+   
+        padding: 1%;
+     font-size: 25px;
+        background-color: #2424246a;
+        color: #fff;
+ text-align: left;
+ width: 100%;
+        z-index: 95;
+    }
+
+
+    @media(max-width:400px){
+        #printPost
+        {
+    
+         font-size: 17px;
+
+        }
+        
+        }  
+
+        @media(max-width:250px){
+            #printPost
+            {
+        
+             font-size: 17px;
+    
+            }
+            
+            }  
