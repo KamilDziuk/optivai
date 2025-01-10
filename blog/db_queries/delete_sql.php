@@ -12,7 +12,9 @@ $stmt -> bindParam(':title', $title);
 
 $stmt -> execute();
 
-
+$stmt = null;
+$pdo = null;
+die();
 
 }
 catch(PDOException $e)

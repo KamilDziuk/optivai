@@ -12,7 +12,9 @@ $stmt = $pdo -> prepare($sql);
 $stmt -> bindParam(':title', $title);
 $stmt -> bindParam(':id_post', $id_post);
 $stmt -> execute();
-
+$stmt = null;
+$pdo = null;
+die();
 }
 catch(PDOException $e)
 {

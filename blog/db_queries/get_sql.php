@@ -14,8 +14,8 @@ $post = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 
 $stmt = null;
-
 $pdo = null;
+
 ?>
 
 
