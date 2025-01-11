@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" post_content="width=device-width, initial-scale=1.0">
-<script  src="../js/post_js.js" async></script>
+
 <link rel="stylesheet" type="text/css" href="../css/post_style.css">
     
 <title> Post configuration</title>
@@ -11,12 +11,11 @@
 <body>
 <?php
  require_once "db_queries/get_sql.php";
+ 
 ?>
-<script>
-let post = <?php echo json_encode($post); ?> 
-</script>
+
 <div id="post_box">
-<div id="post_display">
+<div class="post_display_configuration">
 </div>
 </div>
 <div id="form_box">
@@ -29,7 +28,7 @@ let post = <?php echo json_encode($post); ?>
 name="image"  class="image" class="image">
 <input type="text" 
 name="post_image"  class="post_image" >
-<input type="submit"  class="submit"  name = "submit" value="Add post">
+<input type="submit"  class="submit"  name="submit" value="Add post">
 </form>
 
 <h3> Remove post</h3>
@@ -55,8 +54,13 @@ name="post_image"  class="post_image" >
 </form>
 
 </div>
+<script>
+let post = <?php echo json_encode($post); ?> 
+
+
+</script>
+<script  src="../js/post_js.js" async></script>
 </body>
 </html>
-
 
 

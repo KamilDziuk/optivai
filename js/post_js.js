@@ -1,4 +1,10 @@
-document.querySelector('.submit').addEventListener('click',  function() {
+
+const post_display = document.querySelector(".post_display");
+const post_display_configuration = document.querySelector(".post_display_configuration");
+const submit = document.querySelector(".submit");
+
+
+   if(submit) submit.addEventListener('click', () => {
     let image = document.querySelector('.image');
     let files = image.files; 
     let file = files[0]; 
@@ -16,17 +22,54 @@ body: fomrData
 
 })
 });
-   
-let post_display = document.querySelector("#post_display");
-let getPost = post.map( post_content => {
-return `<br> <div class ="post_background">
-<img class="images"  src="upload_image/images/${post_content.post_image}">
-<br> Id: ${post_content.id_post }<br>
-Title: ${post_content.title }<br>
-Main text: ${post_content.main_text }<br>
-Date: ${post_content.auto_date }</div><br>`
-}).join('\n');
-post_display.innerHTML = getPost;
 
+
+
+const getPost = {
+
+  getPosts() {
+
+    return post.map(({ id_post, post_image, title, main_text, auto_date }) => ({
+  
+      id: id_post,
+      image: post_image,
+      title: title,
+      main_text: main_text,
+      date: auto_date
+    }));
+  },
+
+//Admin
+  get getPostsConfiguration() {
+    return this.getPosts()
+    .map(({ id, image,  title, main_text ,date}) => `<br> <div class ="post_background">
+    <img class="images"  src="upload_image/images/${image}">
+   <br> Id: ${id}<br>
+    Title: ${title }<br>
+   Main text: ${main_text }<br>
+    Date: ${date }</div>
+  `);
+   
+  },
+
+  //Client
+  get getPostsClient() {
+    return this.getPosts()
+      .map(({  image,  title, main_text ,date }) => `<br><br><div class ="post_background">
+ <img class="images"  src="upload_image/images/${image}">
+<br> 
+<div class="post_title">${title}</div> 
+<div  class="post_text">${main_text}</div>
+<div  class="post_date"> ${date}</div><br><br>
+</div>
+` ).join('\n');
+      
+  },
+
+};
+
+
+if (post_display) post_display.innerHTML = getPost.getPostsClient;
+if (post_display_configuration) post_display_configuration.innerHTML = getPost.getPostsConfiguration;
 
 
