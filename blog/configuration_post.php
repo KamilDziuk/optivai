@@ -14,21 +14,18 @@
  
 ?>
 
-<div id="post_box">
+<div id="post_configuration_box">
 <div class="post_display_configuration">
 </div>
 </div>
 <div id="form_box">
 <h3> Adding post</h3> 
 <form action="db_queries/add_sql.php" method="POST"  enctype="multipart/form-data" >
-<input type="text" class="title" name="title" placeholder="Tytle">  <br>
+<input type="text" class="title" name="title" placeholder="Tytle"> 
 <input type="text" class="main_text" name="main_text" placeholder="Main text">
-<br><br>
-<input type="file" 
-name="image"  class="image" class="image">
-<input type="text" 
-name="post_image"  class="post_image" >
-<input type="submit"  class="submit"  name="submit" value="Add post">
+<input type="file" name="image"  class="image" class="image"> 
+<input type="text" name="post_image"  class="post_image" >
+<input type="submit"  class="submit"  name="submit" value="add post"> 
 </form>
 
 <h3> Remove post</h3>
@@ -37,9 +34,20 @@ name="post_image"  class="post_image" >
 <input type="submit" value="Delete post">
 </form>
 
+
+<!-- 
+<h3>Update image</h3>
+<form action="db_queries/update_image_sql.php" method="POST"  enctype="multipart/form-data" >
+<input type="text" class="id_post" name="id_post"  placeholder="id">
+<input type="file" name="image"  class="image" class="image">
+<input type="text" name="post_image"  class="post_image" >
+<input type="submit"  class="submit"  name="submit" value="Update image">
+</form> -->
+
+
 <h3> Update title post</h3>
 <form action="db_queries/update_title_sql.php" method="POST">
-<input type="text" class="id_post" name="id_post"  placeholder="id"><br>
+<input type="text" class="id_post" name="id_post"  placeholder="id">
 <input type="text" class="title" name="title" placeholder="Tytle">
 <input type="submit" value="Update title"><br>
 </form>
@@ -47,9 +55,9 @@ name="post_image"  class="post_image" >
 <h3>Update main text  post</h3>
 <form action="db_queries/update_main_text_sql.php" method="POST">
 <input type="text" class="id_post" name="id_post" placeholder="id">
-<br>
+
 <textarea rows="2" cols="10"  class="main_text" name="main_text"  placeholder="Main text"></textarea>
-<br>
+
 <input type="submit" value="Update main text">
 </form>
 

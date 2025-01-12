@@ -1,4 +1,5 @@
 <?php
+
 require "../db/config/config.php";
 
 $sql = "SELECT * FROM optivai_blog ";

@@ -6,23 +6,23 @@
     html,body {
     color:#fff;
     background-color:#000000;
-    font-family:'Courier New',monospace;
+font-family: Verdana, sans-serif;
     overflow-x:hidden;
+ 
     font-weight:300
     }
     .post_title
     {
-        position: relative;
-font-size: 30px;
-font-weight: 900;
-color:rgb(192, 192, 192);
+      
+font-size: 25px;
+color:rgb(255, 255, 255);
     }
 
     .post_text
     {
-        position: relative;
-        font-weight: 500;
-        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: 17px;
         color: #ffffff;
         padding-top: 2%;
         padding-bottom: 2%;
@@ -30,8 +30,8 @@ color:rgb(192, 192, 192);
     
     .post_date
 {
-    position: relative;
-font-size: 12px;
+    font-weight: 400;
+font-size: 15px;
 text-align: right;
 left: -10%;
 
@@ -45,21 +45,39 @@ left: -10%;
     }
 
     
-    #post_box {
+    #post_configuration_box{
     transform:translateX(-40%);
     left:50%;
     width:40%;
-    padding:2%;
-    position:absolute
+    padding:1%;
+    position:absolute;
+    z-index: 100;
     }
+
+    #post_box {
+        transform:translateX(-50%);
+        left:50%;
+        width:65%;
+        padding:1%;
+        position:absolute;
+        z-index: 100;
+        }
+        
     
     .images {
     position:relative;
-    width:90%
+    width:50%;
+    padding-bottom: 2%;
     }
+
+    .images_configuration {
+        position:relative;
+        width:90%;
+        padding-bottom: 2%;
+        }
     
     #form_box {
-    position:relative;
+    position:fixed ;
     left:2%
     }
     
@@ -79,8 +97,8 @@ left: -10%;
     input[type=file] {
     position:relative;
     width:220px;
-    padding:12px;
-    margin-top:-1%;
+    padding:5px;
+    margin-top:1%;
     margin-bottom:.5%;
     display:flex;
     border:1px solid #ccc;
@@ -89,8 +107,9 @@ left: -10%;
     }
     
     input[type=text],.main_text {
+        position:relative;
     width:300px;
-    padding:12px 20px;
+    padding:5px 10px;
     margin:5px;
     margin-top:-.5%;
     display:flex;
@@ -100,9 +119,10 @@ left: -10%;
     }
     
     input[type=submit] {
+        position:relative;
     background-color:#4caf4f00;
     color:#fff;
-    padding:14px;
+    padding:5px;
     border:1px solid #ccc;
     border-radius:4px
     }
@@ -135,9 +155,23 @@ left: -10%;
     transform:translateX(-50%);
     left:50%;
     width:80%;
-    padding:2%;
-    position:relative
+    padding:1%;
+    position:relative; 
     }
+
+
+    #post_configuration_box{
+        transform:translateX(-50%);
+        left:50%;
+        width:80%;
+        padding:1%;
+        position:relative; 
+        }
+
+    #form_box {
+        position:relative;
+     
+        }
     }
     
     @media(max-width:400px) {
