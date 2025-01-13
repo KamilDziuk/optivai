@@ -1,7 +1,7 @@
 
-const post_display = document.querySelector(".post_display");
-const post_display_configuration = document.querySelector(".post_display_configuration");
-const submit = document.querySelector(".submit");
+let post_display = document.querySelector(".post_display");
+let post_display_configuration = document.querySelector(".post_display_configuration");
+let submit = document.querySelector(".submit");
 
 if(submit) submit.addEventListener('click', () => {
 let image = document.querySelector('.image');
@@ -9,7 +9,8 @@ let files = image.files;
 let file = files[0]; 
 let fileName = file.name;
 let fomrData = new FormData();
-let post_image = document.querySelecqtor('.post_image').value = fileName;
+let post_image = document.querySelector('.post_image').value = fileName;
+
 fomrData.append('post_image',post_image);
 
 fetch("db_queries/add_sql.php", {
@@ -17,9 +18,7 @@ fetch("db_queries/add_sql.php", {
 method:"POST",
 body: fomrData
 
-});
-
-
+})
 });
 
 const getPost = {

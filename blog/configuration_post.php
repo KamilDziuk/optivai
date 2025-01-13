@@ -23,8 +23,8 @@
 <form action="db_queries/add_sql.php" method="POST"  enctype="multipart/form-data" >
 <input type="text" class="title" name="title" placeholder="Tytle"> 
 <input type="text" class="main_text" name="main_text" placeholder="Main text">
-<input type="file" name="image"  class="image" class="image"> 
-<input type="text" name="post_image"  class="post_image" >
+<input type="file"  class="image" name="image" > 
+<input type="text"   class="post_image" name="post_image"   >
 <input type="submit"  class="submit"  name="submit" value="add post"> 
 </form>
 
@@ -33,16 +33,6 @@
 <input type="text" class="title" name="title"  placeholder="Tytle">
 <input type="submit" value="Delete post">
 </form>
-
-
-<!-- 
-<h3>Update image</h3>
-<form action="db_queries/update_image_sql.php" method="POST"  enctype="multipart/form-data" >
-<input type="text" class="id_post" name="id_post"  placeholder="id">
-<input type="file" name="image"  class="image" class="image">
-<input type="text" name="post_image"  class="post_image" >
-<input type="submit"  class="submit"  name="submit" value="Update image">
-</form> -->
 
 
 <h3> Update title post</h3>
