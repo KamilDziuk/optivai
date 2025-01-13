@@ -6,7 +6,8 @@ $title = $_POST['title'];
 $main_text = $_POST['main_text'];
 $post_image = $_POST['post_image'];
 
-
+if(isset($_POST['submit']) && isset($_FILES['image']) && !empty($title ) && !empty($main_text) && !empty($post_image )) 
+{
 
 //  $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 //  $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION);
@@ -31,6 +32,12 @@ $pdo = null;
 header('Location: ../configuration_post.php');
 exit();
 }
+else
+{
+    header('Location: ../configuration_post.php?error=$em');
+}
+}
+
 catch(PDOException $e)
 {
  echo "<br>". $e -> getMessage(). "<br> ";

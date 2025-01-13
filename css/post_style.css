@@ -20,14 +20,18 @@ color:rgb(255, 255, 255);
 
     .post_text
     {
+        position: relative;
         line-height: 1.4;
         font-weight: 400;
         font-size: 17px;
         color: #ffffff;
         padding-top: 2%;
         padding-bottom: 2%;
-    }
+
+   
     
+    }
+ 
     .post_date
 {
     font-weight: 400;
@@ -82,7 +86,7 @@ left: -10%;
     }
     
     .post_image {
-    display:none!important
+    display:none!important;
     }
     
     .id_post {

@@ -22,15 +22,15 @@
 <h3> Adding post</h3> 
 <form action="db_queries/add_sql.php" method="POST"  enctype="multipart/form-data" >
 <input type="text" class="title" name="title" placeholder="Tytle"> 
-<input type="text" class="main_text" name="main_text" placeholder="Main text">
+<textarea rows="2" cols="10"  class="main_text" name="main_text"  placeholder="Main text"></textarea>
 <input type="file"  class="image" name="image" > 
 <input type="text"   class="post_image" name="post_image"   >
-<input type="submit"  class="submit"  name="submit" value="add post"> 
+<input type="submit"  class="submit"  name="submit" value="Add post"> 
 </form>
 
-<h3> Remove post</h3>
+<h3>Remove post</h3>
 <form action="db_queries/delete_sql.php" method="POST">
-<input type="text" class="title" name="title"  placeholder="Tytle">
+<input type="text" class="id_post" name="id_post"  placeholder="id">
 <input type="submit" value="Delete post">
 </form>
 
@@ -52,6 +52,7 @@
 </form>
 
 </div>
+
 <script>
 let post = <?php echo json_encode($post); ?> 
 

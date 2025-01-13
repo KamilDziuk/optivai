@@ -55,7 +55,7 @@ return this.getPosts()
 <img class="images"  src="upload_image/images/${image}">
 <br> 
 <div class="post_title">${title}</div> 
-<div  class="post_text">${main_text}</div>
+<div  class="post_text ">${main_text}</div>
 <div  class="post_date"> ${date}</div><br><br>
 </div>
 ` ).join('\n');
@@ -66,5 +66,3 @@ return this.getPosts()
 
 if (post_display) post_display.innerHTML = getPost.getPostsClient;
 if (post_display_configuration) post_display_configuration.innerHTML = getPost.getPostsConfiguration;
-
-
