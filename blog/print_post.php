@@ -11,9 +11,9 @@
 <?php
  require_once "db_queries/get_sql.php";
 ?>
-<div id="post_box">
+
 <div class="post_display"></div>
-</div>
+
 <script>
 let post = <?php echo json_encode($post); ?>
 
