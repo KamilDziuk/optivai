@@ -14,10 +14,6 @@
  
 ?>
 
-<div id="post_configuration_box">
-<div class="post_display_configuration">
-</div>
-</div>
 <div id="form_box">
 <h3> Adding post</h3> 
 <form action="db_queries/add_sql.php" method="POST"  enctype="multipart/form-data" >
@@ -52,6 +48,10 @@
 </form>
 
 </div>
+
+<div class="post_display_configuration">
+</div>
+
 
 <script>
 let post = <?php echo json_encode($post); ?> 

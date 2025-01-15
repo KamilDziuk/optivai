@@ -1,7 +1,6 @@
 <?php 
 try{
 
-   
 $dbhost = '';
 $dbname = '';
 $dbuser = '';
