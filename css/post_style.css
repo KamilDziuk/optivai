@@ -91,7 +91,7 @@
     }
     
     #form_box_configuration {
-    position:absolute;
+    position:relative;
     display:flex
     }
     
@@ -104,8 +104,8 @@
     }
     
     h3 {
-    padding-top:2%;
-    padding-bottom:2%
+    padding-top:0.5%;
+    padding-bottom:0.5%
     }
     
     input[type=file] {
@@ -125,7 +125,7 @@
     width:300px;
     padding:5px 10px;
     margin:5px;
-    margin-top:-4.5%;
+    margin-top:0%;
     display:flex;
     border:1px solid #ccc;
     border-radius:4px;
