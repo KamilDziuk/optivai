@@ -36,7 +36,7 @@ return this.getPosts()
 .map(({ id, image,  title, main_text ,date }) => {  
 let postContent = `<div class ="post  post_background${id}" >
 <img class="images${id}  images "  src="upload_image/images/${image}">
-<div class="post_title"> ${title}</div>
+<div class="post_title "> ${title}</div>
 <div  class="post_text post_text_click${id}">  ${main_text}</div>
 <div class="read read${id}"></div> 
 <div  class="post_date">${date}</div>
@@ -52,7 +52,7 @@ return this.getPosts()
 let postContent = ` 
 <div class ="post   post_background${id}" > 
 <img class="images${id}  images "  src="upload_image/images/${image}">
-<div class="post_title">ID: ${id} <br> Title: ${title}</div>
+<div class=" post_title "> ID: ${id} <br> Title: ${title}</div>
 <div  class="post_text post_text_click${id}">Text: ${main_text}</div>
 <div class="read read${id}"></div> 
 <div  class="post_date">Date: ${date}</div>
@@ -65,34 +65,58 @@ return  this.getPosts().map(({ id}) => {
    
 setTimeout( () =>
 {
+
+
 let post_background = document.querySelector(`.post_background${id}`);
+
 let post_text_click = document.querySelector(`.post_text_click${id}`);
 let images = document.querySelector(`.images${id}`);
+let read = document.querySelector(`.read${id}`);
 
-post_background.style.position = "relative";
+
+
 post_text_click.style.overflow = "hidden";
 post_text_click.style.textOverflow  = "ellipsis";
 post_text_click.style.whiteSpace  = "nowrap";
- 
-let read = document.querySelector(`.read${id}`);
-  
+if(window.matchMedia("(max-width: 1100px)").matches ){  post_background.style.cssText  = "    position:relative; width:90% !important; border-radius:5%;  margin:0%; transform:translateX(-50%); left:50%; padding: 2% !important;  background:rgba(62, 62, 62, 0.371);   margin-top:3%;  margin-bottom:2%;";
+
+
+}
+else
+{
+post_background.style.cssText  = "position:relative; width:20%; height:0%; z-index:200; padding:0.5%; top:-4.5%; background:rgba(62, 62, 62, 0.371); border-radius:5%; width:calc(20% - 0%); margin:2%; "}
+
+
 read.innerHTML = "Read more...";  
 read.addEventListener('click', () =>
 {  
+
+
 if(read.innerHTML === "Read more...")
 {
-post_background.style.position = "relative";
-post_background.style.width = "90%";
-post_background.style.height = "90%";
-post_background.style.padding = "3%";
-post_background.style.top = "-4.5%";
-images.style.width = "35%";
+  if (post_display) { if(window.matchMedia("(max-width: 1100px)").matches ){ post_display.style.height = "100%" }
+else
+{
+    post_display.style.height = "865px";
+  
+}
+  }
+  if (post_display_configuration) { if(window.matchMedia("(max-width: 1100px)").matches ){ post_display_configuration.style.height = "100%" }
+  else
+  {
+    post_display_configuration.style.height = "865px";
+    
+  }
+    }
+  post_background.style.cssText  = "position:absolute; width:96%; height:100%; z-index:999; padding:3%; top:0%; background: #000000; border-radius:0%;";
+
+  if(window.matchMedia("(max-width: 1100px)").matches ){ post_background.style.position = "relative"};
+
+images.style.width = "30%";
 post_text_click.style.overflow = "unset";
 post_text_click.style.textOverflow  = "unset";
 post_text_click.style.whiteSpace  = "unset";
-post_background.style.zIndex = "999";
-post_background.style.background= "#000000";
-post_background.style.borderRadius = "1.5%";
+
 if (post_display) { post_display.style.display = "flex"};
 if (post_display_configuration) {   post_display_configuration.style.display = "flex"};
 read.style.color = "red";
@@ -100,17 +124,21 @@ read.innerHTML = "Show less";
 }
 else if(read.innerHTML === "Show less")
 {
-post_background.style.position = "relative";
-post_background.style.width = "20%";
-if(window.matchMedia("(max-width: 1100px)").matches ){ post_background.style.width = "80%"};
-post_background.style.padding = "0.5%";
+
+  post_background.style.cssText  = "position:relative; width:20%; height:0%; z-index:200; padding:0.5%; top:-4.5%; background:rgba(62, 62, 62, 0.371); border-radius:5%; width:calc(20% - 0%); margin:2%;";
+
+
+
+if(window.matchMedia("(max-width: 1100px)").matches ){ 
+
+  post_background.style.cssText  = " position:relative; width:90% !important; border-radius:5%;  margin:0%; transform:translateX(-50%); left:50%; padding: 2% !important;  background:rgba(62, 62, 62, 0.371);   margin-top:3%;  margin-bottom:2%"}
+if (post_display_configuration) { post_display_configuration.style.height = "100%";}
+if (post_display) { post_display.style.height = "100%";}
 images.style.width = "100%";
 post_text_click.style.overflow = "hidden";
 post_text_click.style.textOverflow  = "ellipsis";
 post_text_click.style.whiteSpace  = "nowrap";
-post_background.style.zIndex = "100";
-post_background.style.background= "rgba(62, 62, 62, 0.371";
-post_background.style.borderRadius = "1.5%";
+
 if (post_display) { post_display.style.display = "flex"};
 if (post_display_configuration) {   post_display_configuration.style.display = "flex"};
 read.style.color = " #1675c8";  
