@@ -8,16 +8,19 @@
     background-color:#000;
     font-family:Verdana,sans-serif;
     overflow-x:hidden;
+   
 
     }
+    
     
     button:hover {
     background-color:#0000
     }
-    
+   
+
+
     .post_title {
-    font-size:20px;
-     
+
     font-weight:900;
     color:#fff
     }
@@ -26,7 +29,7 @@
 
     line-height:1.4;
     font-weight:400;
-    font-size:20px !important;
+
     color:#fff;
     padding-top:2%;
     padding-bottom:2%
@@ -62,13 +65,14 @@
     left:-10%
     }
     
-    .read {
+    .read_text {
     position:relative;
+    font-size: 1em !important;
     font-weight:500;
     color:#1675c8
     }
     
-    .read:hover {
+    .read_text:hover {
     color:#185c98
     }
     
@@ -86,14 +90,11 @@
     
     #form_box {
     position:relative;
-    width:100%;
-    left:2%
+    width:100% ;
+    left:10%
     }
-    
-    #form_box_configuration {
-    position:relative;
-    display:flex
-    }
+
+   
     
     .post_image {
     display:none!important
@@ -108,9 +109,10 @@
     padding-bottom:0.5%
     }
     
+  
     input[type=file] {
     position:relative;
-    width:220px;
+    width:20%;
     padding:5px;
     margin-top:1%;
     margin-bottom:.5%;
@@ -122,7 +124,8 @@
     
     input[type=text],.main_text {
     position:relative;
-    width:300px;
+    width:20%;
+   
     padding:5px 10px;
     margin:5px;
     margin-top:0%;
@@ -145,7 +148,24 @@
     background-color:#000000b8
     }
      
-    @media(max-width:1100px) {
+    @media(max-width:850px) {
+
+      
+    input[type=file] {
+        width:50%;
+        }
+        
+        input[type=text],.main_text {
+  
+        width:70%;
+   
+        }
+        
+        input[type=submit] {
+            width:20%;
+        }
+        
+      
         .post_display {
         margin-top:1%;
         position:relative;
@@ -160,17 +180,8 @@
         position:relative;
     
         }
-        .read{
-    
-    font-size: 20px !important; 
-    
-        }
-    
-        
-        #form_box_configuration {
-        position:relative;
-        display:contents
-        }
+     
+      
         }
     
     @media(max-width:350px) {
@@ -190,20 +201,21 @@
     }
     
     input[type=file] {
-    width:90%
-    }
-    
-    input[type=text],.main_text {
-    width:90%
-    }
-
-    .post_text {
-
-   
-        font-size:20px !important;
-     
-    
+        width:50%;
         }
+        
+        input[type=text],.main_text {
+  
+        width:70%;
+   
+        }
+        
+        input[type=submit] {
+            width:40%;
+        }
+        
+
+
 
     }
    
