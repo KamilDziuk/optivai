@@ -16,26 +16,47 @@
     button:hover {
     background-color:#0000
     }
-   
+    
+    .post
 
+    {
+      position:relative;
+      width:20%;
+      height:0%;
+      z-index:200;
+      padding:0.5%;
+      background:rgba(62, 62, 62, 0.371);
+      border-radius:5%;
+      width:calc(20% - 0%);
+      margin:2%;
+    }
 
     .post_title {
 
     font-weight:900;
-    color:#fff
+    color:#fff;
+    font-size: 17px;
     }
 
     .post_text {
 
     line-height:1.4;
     font-weight:400;
-
+font-size: 16px;
     color:#fff;
     padding-top:2%;
     padding-bottom:2%
     }
     
-
+   
+    .read_text
+    {
+        font-size: 19px;
+    }
+    .post_date
+    {
+        font-size: 19px;
+    }
     .post_display,.post_display_configuration {
 
     position:relative;
@@ -125,7 +146,7 @@
     input[type=text],.main_text {
     position:relative;
     width:20%;
-   
+    font-size: 1rem;
     padding:5px 10px;
     margin:5px;
     margin-top:0%;
@@ -147,9 +168,43 @@
     input[type=submit]:hover {
     background-color:#000000b8
     }
-     
-    @media(max-width:850px) {
+    @media(max-width:1100px) {
 
+        .post_title {
+
+
+            font-size: 16px;
+            }
+        
+            .post_text {
+        
+      
+        font-size: 15px;
+       
+            }
+            .images {
+                width:100%;
+            }
+         
+
+    }
+
+    @media(max-width:850px) {
+        .post
+        {
+            
+          position:relative;
+          width:90%;
+          border-radius:5%;
+          margin:0%;
+          transform:translateX(-50%);
+          left:50%;
+          padding: 2%;
+          background:rgba(62, 62, 62, 0.371);
+          margin-top:3%;
+          margin-bottom:2%;
+        }
+        
       
     input[type=file] {
         width:50%;
@@ -158,7 +213,7 @@
         input[type=text],.main_text {
   
         width:70%;
-   
+ 
         }
         
         input[type=submit] {
@@ -175,13 +230,17 @@
         }
         
         .images {
-            width:100% !important;
-      
-        position:relative;
-    
+            width:40%;
         }
      
-      
+     
+        }
+
+        @media(max-width:600px) {
+            .images {
+                width:100%;
+              
+                }
         }
     
     @media(max-width:350px) {
@@ -191,10 +250,8 @@
     
     }
     .images {
-        width:100% !important;
+        width:100%;
       
-        position:relative;
-    
         }
     .id_post {
     width:90%!important
