@@ -102,12 +102,8 @@ let post = <?php echo json_encode($post); ?>
 ';
 
    
-    if (!file_exists($file_name)) {
+ 
         file_put_contents($file_name, $file_content);
-        echo "Plik $file_name został stworzony.";
-    } else {
-        echo "Plik $file_name już istnieje.";
-    }
 
 
 
@@ -142,12 +138,9 @@ $pdo = null;
 ';
 
    
-    if (!file_exists($get_sql_file_name)) {
+    
         file_put_contents($get_sql_file_name, $get_sql_file_content);
-        echo "Plik $file_name został stworzony.";
-    } else {
-        echo "Plik $file_name już istnieje.";
-    }
+
 }
 ?>
 <script  src="../js/post_js.js" async></script>
