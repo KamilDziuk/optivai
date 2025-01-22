@@ -17,7 +17,6 @@
 <script>
 let post = <?php echo json_encode($post); ?>
 
-
 </script>
 <script  src="../js/post_js.js" async></script>
 

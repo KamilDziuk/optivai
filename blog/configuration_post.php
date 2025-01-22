@@ -58,8 +58,102 @@ let post = <?php echo json_encode($post); ?>
 
 
 </script>
+<?php
+
+
+
+  if (isset($_POST['submit'])) {
+    $id_post = $_POST['id_post'];
+    $get_sql_file_name = "id_post_".$id_post ."_get_sql.php" ;
+    $page_name = $_POST['page_name'];
+
+    
+    $file_name = "post_number_". $page_name.".php";
+ 
+    $file_content = '
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/post_style.css">
+ 
+    <title>Open post</title>
+</head>
+<body>
+<?php
+ require_once "'.$get_sql_file_name.'";
+?>
+
+<div class="open_post_display"></div>
+
+<script>
+let post = <?php echo json_encode($post); ?>
+
+</script>
+<script  src="../js/post_js.js" async></script>
+
+
+</body>
+</html>
+
+
+
+';
+
+   
+    if (!file_exists($file_name)) {
+        file_put_contents($file_name, $file_content);
+        echo "Plik $file_name został stworzony.";
+    } else {
+        echo "Plik $file_name już istnieje.";
+    }
+
+
+
+ 
+    $get_sql_file_content = '
+<?php
+
+require "../db/config/config.php";
+
+
+
+
+$sql = "SELECT * FROM `optivai_blog` WHERE id_post  = '. $id_post.'";
+
+
+$stmt = $pdo -> prepare($sql);
+
+
+$stmt -> execute();
+
+
+$post = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+
+$stmt = null;
+$pdo = null;
+
+?>
+
+
+
+';
+
+   
+    if (!file_exists($get_sql_file_name)) {
+        file_put_contents($get_sql_file_name, $get_sql_file_content);
+        echo "Plik $file_name został stworzony.";
+    } else {
+        echo "Plik $file_name już istnieje.";
+    }
+}
+?>
 <script  src="../js/post_js.js" async></script>
 </body>
 </html>
+
+
 
 
