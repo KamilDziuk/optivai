@@ -1,5 +1,26 @@
 
 
+ClassicEditor
+.create(document.querySelector('.main_text'))
+
+.then(editor => {
+  console.log('The editor has been loaded!', editor);
+})
+.catch(error => {
+  console.error('An error occurred while loading the editor:', error);
+});
+
+
+
+ClassicEditor
+.create(document.querySelector('.update_main_text'))
+
+.then(editor => {
+  console.log('The editor has been loaded!', editor);
+})
+.catch(error => {
+  console.error('An error occurred while loading the editor:', error);
+});
 
 
 let open_post_display = document.querySelector(".open_post_display");
@@ -49,7 +70,7 @@ let postContent = `
 <img class="images${id}  images "  src="upload_image/images/${image}">
 <div class="post_title post_title${id}"> ${title}</div>
 <div  class="post_text post_text_click${id}">  ${main_text}</div>
-<a  href="http://localhost/optivai/blog/post_number_${id}.php"  class="read_text read${id}">Read more...</a> 
+<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post_number_${id}.php" class="read_text read${id}">Read more...</a> 
 
 <div  class="post_date ">${date}</div>
 </div>
@@ -67,7 +88,7 @@ get getOpenPostsClient() {
   <img class="images${id}  images "  src="upload_image/images/${image}">
   <div class="post_title post_title${id}"> ${title}</div>
   <div  class="post_text post_text_click${id}">  ${main_text}</div>
-  <a  href="http://localhost/optivai/blog/print_post.php"  class="read_text" style ="color: red;">Back...</a> 
+  <a target="_blank"  href="https://optivai.pl/blog/"  class="read_text" style ="color: red;">Back...</a> 
   <div  class="post_date ">${date}</div>
   </div>
   `;  
@@ -82,17 +103,23 @@ return this.getPosts()
 .map(({ id, image,  title, main_text ,date }) => {  
 let postContent = ` 
 
-<form  method="POST">
-<input type="text" value= "${id}" name="page_name">
-<input type="text" value= "${id}" name="id_post">
-<input type="submit"  name="submit" value="Add post">
-</form>
+
+
+
+
+
+
+
+
+
+
+
 
 <div class ="post   post_background${id}" > 
 <img class="images${id}  images "  src="upload_image/images/${image}">
 <div class=" post_title post_title${id}"> ID: ${id} <br> Title: ${title}</div>
 <div  class="post_text post_text_click${id}">Text: ${main_text}</div>
-<a  href="http://localhost/optivai/blog/post_number_${id}.php"  class="read_text read${id}">Read more...</a> 
+<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post_number_${id}.php"  class="read_text read${id}">Read more...</a> 
 <div  class="post_date ">Date: ${date}</div>
 </div>`;
 
@@ -102,6 +129,23 @@ return postContent;
 get postInteraction() {
 return  this.getPosts().map(({id}) => {
 
+
+let page_name = id;
+let id_post = id;
+
+let fomrData = new FormData();
+
+fomrData.append("page_name",page_name);
+fomrData.append("id_post",id_post);
+
+
+
+fetch("../blog/configuration_post.php",
+  {
+    method: "POST",
+    body: fomrData
+  }
+)
 
 let post_background = document.querySelector(`.post_background${id}`);
 let post_text_click = document.querySelector(`.post_text_click${id}`);
@@ -116,7 +160,7 @@ if(window.matchMedia("(max-width:850px)").matches ){
 
 
 
-      if(window.location.href ===  `http://localhost/optivai/blog/post_number_${id}.php`)
+      if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post_number_${id}.php`)
         {
           if (post_display) { post_display.style.height = "100%"};
           if (post_display_configuration) { post_display_configuration.style.height = "100%"};
@@ -148,7 +192,7 @@ else
 post_text_click.style.overflow = "hidden";
 post_text_click.style.textOverflow  = "ellipsis";
 post_text_click.style.whiteSpace  = "nowrap";
-if(window.location.href ===  `http://localhost/optivai/blog/post_number_${id}.php`)
+if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post_number_${id}.php`)
   {   
 if (post_display) { post_display.style.height = "100%"};
 if (post_display_configuration) { post_display_configuration.style.height = "100%"};

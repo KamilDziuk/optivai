@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/post_style.css">
- 
+    <link rel="icon" type="image/png" href="image/cropped-logo-512x512-1.png">
     <title>Blog</title>
 </head>
 <body>

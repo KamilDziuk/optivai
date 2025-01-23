@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="icon" type="image/png" href="image/cropped-logo-512x512-1.png">
 <link rel="stylesheet" type="text/css" href="../css/post_style.css">
-    
+<script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
 <title> Post configuration</title>
 </head>
 <body>
@@ -17,11 +17,11 @@
 <div id="form_box">
 <h3> Adding post</h3> 
 <form action="db_queries/add_sql.php" method="POST"  enctype="multipart/form-data" >
-<input type="text" class="title" name="title" placeholder="Tytle"> 
-<textarea rows="2" cols="10"  class="main_text" name="main_text"  placeholder="Main text"></textarea>
+<textarea type="text" class="title" name="title" placeholder="Tytle"></textarea>
+<textarea   class="main_text " name="main_text"  placeholder="Main text"></textarea>
 <input type="file"  class="image" name="image" > 
 <input type="text"   class="post_image" name="post_image"   >
-<input type="submit"  class="submit"  name="submit" value="Add post"> 
+<input     type="submit"  class="submit"  name="submit" value="Add post"> 
 </form>
 
 <h3>Remove post</h3>
@@ -34,7 +34,7 @@
 <h3> Update title post</h3>
 <form action="db_queries/update_title_sql.php" method="POST">
 <input type="text" class="id_post" name="id_post"  placeholder="id">
-<input type="text" class="title" name="title" placeholder="Tytle">
+<textarea type="text" class="title" name="title" placeholder="Tytle"></textarea>
 <input type="submit" value="Update title"><br>
 </form>
 
@@ -42,7 +42,7 @@
 <form action="db_queries/update_main_text_sql.php" method="POST">
 <input type="text" class="id_post" name="id_post" placeholder="id">
 
-<textarea rows="2" cols="10"  class="main_text" name="main_text"  placeholder="Main text"></textarea>
+<textarea   class="main_text  update_main_text" name="main_text"  placeholder="Main text"></textarea>
 
 <input type="submit" value="Update main text">
 </form>
@@ -60,12 +60,14 @@ let post = <?php echo json_encode($post); ?>
 </script>
 <?php
 
+$id_post = $_POST['id_post'];
+$page_name = $_POST['page_name'];
 
+  if (!empty($id_post ) &&  !empty($page_name ) ) {
 
-  if (isset($_POST['submit'])) {
-    $id_post = $_POST['id_post'];
+  
     $get_sql_file_name = "id_post_".$id_post ."_get_sql.php" ;
-    $page_name = $_POST['page_name'];
+  
 
     
     $file_name = "post_number_". $page_name.".php";
@@ -76,6 +78,7 @@ let post = <?php echo json_encode($post); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image/cropped-logo-512x512-1.png">
     <link rel="stylesheet" type="text/css" href="../css/post_style.css">
  
     <title>Open post</title>
@@ -144,6 +147,7 @@ $pdo = null;
 }
 ?>
 <script  src="../js/post_js.js" async></script>
+
 </body>
 </html>
 
