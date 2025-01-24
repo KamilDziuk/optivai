@@ -1,11 +1,20 @@
 <?php
 ob_start();
-require "../../db/config/config.php";
+require "../db/config/config.php";
 try{
 $id_post = $_POST['id_post'];
+
 if(!empty($id_post ) )
 {
 
+
+    unlink('post'. $id_post . '.php');
+
+
+  
+    
+    unlink('id_post_'. $id_post .'_get_sql.php');
+  
 $sql = "DELETE FROM optivai_blog WHERE id_post = :id_post";
 $stmt = $pdo -> prepare($sql);
 
@@ -17,12 +26,12 @@ $stmt -> execute();
 
 $stmt = null;
 $pdo = null;
-header('Location: ../configuration_post.php'); 
+header('Location: configuration_post.php'); 
 die();
 }
 else
 {
-    header('Location: ../configuration_post.php?error=$em');
+    header('Location: configuration_post.php?error=$em');
 }
 }
 catch(PDOException $e)

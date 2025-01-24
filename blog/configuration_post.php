@@ -25,7 +25,7 @@
 </form>
 
 <h3>Remove post</h3>
-<form action="db_queries/delete_sql.php" method="POST">
+<form action="delete_sql.php" method="POST">
 <input type="text" class="id_post" name="id_post"  placeholder="id">
 <input type="submit" value="Delete post">
 </form>
@@ -60,17 +60,17 @@ let post = <?php echo json_encode($post); ?>
 </script>
 <?php
 
+
+// $path  = 'upload_image/images/1734528224092.jpg';
+// unlink($path);
 $id_post = $_POST['id_post'];
 $page_name = $_POST['page_name'];
 
   if (!empty($id_post ) &&  !empty($page_name ) ) {
 
-  
-    $get_sql_file_name = "id_post_".$id_post ."_get_sql.php" ;
-  
+$get_sql_file_name = "id_post_". $id_post . "_get_sql.php" ;
 
-    
-    $file_name = "post_number_". $page_name.".php";
+$file_name = "post". $page_name . ".php";
  
     $file_content = '
 <!DOCTYPE html>
@@ -81,7 +81,7 @@ $page_name = $_POST['page_name'];
     <link rel="icon" type="image/png" href="image/cropped-logo-512x512-1.png">
     <link rel="stylesheet" type="text/css" href="../css/post_style.css">
  
-    <title>Open post</title>
+    <title>'."post".$page_name.'</title>
 </head>
 <body>
 <?php
@@ -99,55 +99,64 @@ let post = <?php echo json_encode($post); ?>
 
 </body>
 </html>
-
-
-
 ';
 
-   
- 
-        file_put_contents($file_name, $file_content);
+file_put_contents($file_name, $file_content);
 
-
-
- 
     $get_sql_file_content = '
 <?php
-
 require "../db/config/config.php";
 
-
-
-
-$sql = "SELECT * FROM `optivai_blog` WHERE id_post  = '. $id_post.'";
-
+$sql = "SELECT * FROM `optivai_blog` WHERE id_post  = '.$id_post.'";
 
 $stmt = $pdo -> prepare($sql);
 
-
 $stmt -> execute();
-
 
 $post = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
-
 $stmt = null;
 $pdo = null;
-
 ?>
-
-
-
 ';
 
-   
-    
-        file_put_contents($get_sql_file_name, $get_sql_file_content);
+file_put_contents($get_sql_file_name, $get_sql_file_content);
+if (file_exists($file_name) &&  file_exists($get_sql_file_name)  )
 
+{
+  
+echo 'Files'.$file_name.' and '. $get_sql_file_name. 'already exisis';
+}
+else
+{
+  echo 'Adding  files'.$file_name.' and '. $get_sql_file_name;
+}
 }
 ?>
 <script  src="../js/post_js.js" async></script>
+<script>
 
+ClassicEditor
+.create(document.querySelector('.main_text'))
+.then(editor => {
+  console.log('The editor has been loaded!', editor);
+})
+.catch(error => {
+  console.error('An error occurred while loading the editor:', error);
+});
+
+
+
+ClassicEditor
+.create(document.querySelector('.update_main_text'))
+
+.then(editor => {
+  console.log('The editor has been loaded!', editor);
+})
+.catch(error => {
+  console.error('An error occurred while loading the editor:', error);
+});
+</script>
 </body>
 </html>
 

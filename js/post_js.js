@@ -1,32 +1,10 @@
 
 
-ClassicEditor
-.create(document.querySelector('.main_text'))
-
-.then(editor => {
-  console.log('The editor has been loaded!', editor);
-})
-.catch(error => {
-  console.error('An error occurred while loading the editor:', error);
-});
-
-
-
-ClassicEditor
-.create(document.querySelector('.update_main_text'))
-
-.then(editor => {
-  console.log('The editor has been loaded!', editor);
-})
-.catch(error => {
-  console.error('An error occurred while loading the editor:', error);
-});
-
-
 let open_post_display = document.querySelector(".open_post_display");
 let post_display = document.querySelector(".post_display");
 let post_display_configuration = document.querySelector(".post_display_configuration");
-let submit = document.querySelector(".submit");
+let submit = document.querySelector(".submit"); 
+let post_delete = document.querySelector(".post_delete");
 if(submit) submit.addEventListener('click', () => {
 let image = document.querySelector('.image');
 let files = image.files; 
@@ -41,10 +19,10 @@ fetch("db_queries/add_sql.php", {
 
 method:"POST",
 body: fomrData
-
 })
 
 });
+
 
 
 
@@ -64,13 +42,11 @@ return this.getPosts()
 .map(({ id, image,  title, main_text ,date }) => {  
 let postContent = `
 
-
-
 <div class ="post  post_background${id}">
 <img class="images${id}  images "  src="upload_image/images/${image}">
 <div class="post_title post_title${id}"> ${title}</div>
 <div  class="post_text post_text_click${id}">  ${main_text}</div>
-<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post_number_${id}.php" class="read_text read${id}">Read more...</a> 
+<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post${id}.php" class="read_text read${id}">Read more...</a> 
 
 <div  class="post_date ">${date}</div>
 </div>
@@ -79,7 +55,7 @@ return postContent;
 }
 )},
 
-
+//Open post client
 get getOpenPostsClient() {
   return this.getPosts()
   .map(({ id, image, title, main_text ,date }) => {  
@@ -97,29 +73,16 @@ get getOpenPostsClient() {
   )},
   
 //Admin
-
 get getPostsConfiguration() {
 return this.getPosts()
 .map(({ id, image,  title, main_text ,date }) => {  
 let postContent = ` 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class ="post   post_background${id}" > 
 <img class="images${id}  images "  src="upload_image/images/${image}">
 <div class=" post_title post_title${id}"> ID: ${id} <br> Title: ${title}</div>
 <div  class="post_text post_text_click${id}">Text: ${main_text}</div>
-<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post_number_${id}.php"  class="read_text read${id}">Read more...</a> 
+<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post${id}.php"  class="read_text read${id}">Read more...</a> 
 <div  class="post_date ">Date: ${date}</div>
 </div>`;
 
@@ -155,12 +118,12 @@ let images = document.querySelector(`.images${id}`);
 if(window.matchMedia("(max-width:850px)").matches ){ 
   
   post_text_click.style.overflow = "hidden";
-  post_text_click.style.textOverflow  = "ellipsis";
-  post_text_click.style.whiteSpace  = "nowrap";
+  post_text_click.style.whiteSpace = "nowrap";
+  post_text_click.style.textOverflow = "ellipsis";
 
 
 
-      if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post_number_${id}.php`)
+      if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post${id}.php`)
         {
           if (post_display) { post_display.style.height = "100%"};
           if (post_display_configuration) { post_display_configuration.style.height = "100%"};
@@ -180,8 +143,8 @@ if (post_display_configuration) {   post_display_configuration.style.display = "
 
   images.style.width = "100%";
   post_text_click.style.overflow = "hidden";
-  post_text_click.style.textOverflow  = "ellipsis";
-  post_text_click.style.whiteSpace  = "nowrap";
+  post_text_click.style.whiteSpace = "nowrap";
+  post_text_click.style.textOverflow = "ellipsis";
   if (post_display) { post_display.style.display = "flex"};
   if (post_display_configuration) {   post_display_configuration.style.display = "flex"};
 
@@ -192,7 +155,7 @@ else
 post_text_click.style.overflow = "hidden";
 post_text_click.style.textOverflow  = "ellipsis";
 post_text_click.style.whiteSpace  = "nowrap";
-if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post_number_${id}.php`)
+if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post${id}.php`)
   {   
 if (post_display) { post_display.style.height = "100%"};
 if (post_display_configuration) { post_display_configuration.style.height = "100%"};
@@ -220,18 +183,16 @@ if (post_display) { post_display.style.height = "100%"};
   post_text_click.style.fontSize  = "0.9em";
   images.style.width = "100%";
   post_text_click.style.overflow = "hidden";
-  post_text_click.style.textOverflow  = "ellipsis";
-  post_text_click.style.whiteSpace  = "nowrap";
-
-
-    }
+  post_text_click.style.whiteSpace = "nowrap";
+  post_text_click.style.textOverflow = "ellipsis";
+}
 }
 })
 }};
 
-if(post_display)    { post_display.innerHTML = getPost.getPostsClient.join('\n');getPost.postInteraction};
+if(post_display){ post_display.innerHTML = getPost.getPostsClient.join('\n');getPost.postInteraction};
 
-if(open_post_display)   { open_post_display.innerHTML = getPost.getOpenPostsClient.join('\n');getPost.postInteraction};
+if(open_post_display){ open_post_display.innerHTML = getPost.getOpenPostsClient.join('\n');getPost.postInteraction};
 
-if(post_display_configuration)  {    post_display_configuration.innerHTML = getPost.getPostsConfiguration.join('\n');getPost.postInteraction};
+if(post_display_configuration){post_display_configuration.innerHTML = getPost.getPostsConfiguration.join('\n');getPost.postInteraction};
 
