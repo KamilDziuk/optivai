@@ -20,7 +20,13 @@
     background-color:#0000
     }
     
+    iframe
+    {
+        border: none !important;
 
+height: 232px;
+width: 100%;
+    }
    
     .post
 
@@ -64,6 +70,7 @@ font-size: 16px;
     .post_date
     {
         font-size: 19px;
+       
     }
     .post_display,.post_display_configuration {
 
@@ -208,7 +215,12 @@ font-size: 16px;
                 width:100%;
             }
          
-
+            iframe
+            {
+                
+        height: 300px;
+  
+            }
     }
 
     @media(max-width:850px) {

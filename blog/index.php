@@ -14,6 +14,7 @@
  require_once "db_queries/get_sql.php";
 ?>
 
+
 <div class="post_display"></div>
 
 <script>
