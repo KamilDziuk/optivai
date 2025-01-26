@@ -23,9 +23,6 @@ Optivai is a simple blog system built using the following technologies:
 ## Demo  
 The blog is available online at: [https://optivai.pl/blog/](https://optivai.pl/blog/).  
 
-## Project Repository  
-Find the source code here: [https://github.com/KamilDziuk/optivai](https://github.com/KamilDziuk/optivai).  
-
 ## Author  
 The project was created by **Kamil Dziuk**.  
 
