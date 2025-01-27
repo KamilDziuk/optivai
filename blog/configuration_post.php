@@ -27,6 +27,7 @@
 <h3>Remove post</h3>
 <form action="delete_sql.php" method="POST">
 <input type="text" class="id_post" name="id_post"  placeholder="id">
+<input type="text" class="page_name" name="page_name"  placeholder="page_name">
 <input type="submit" value="Delete post">
 </form>
 
@@ -51,26 +52,27 @@
 
 <div class="post_display_configuration">
 </div>
-
+main_text
 
 <script>
 let post = <?php echo json_encode($post); ?> 
 
+document.querySelector('.page_name').style.display = "none";
 
 </script>
 <?php
 
 
-// $path  = 'upload_image/images/1734528224092.jpg';
-// unlink($path);
+
 $id_post = $_POST['id_post'];
 $page_name = $_POST['page_name'];
+$title = $_POST['title'];
 
   if (!empty($id_post ) &&  !empty($page_name ) ) {
 
 $get_sql_file_name = "id_post_". $id_post . "_get_sql.php" ;
 
-$file_name = "post". $page_name . ".php";
+$file_name =  $page_name . ".php";
  
     $file_content = '
 <!DOCTYPE html>
@@ -81,7 +83,7 @@ $file_name = "post". $page_name . ".php";
     <link rel="icon" type="image/png" href="image/cropped-logo-512x512-1.png">
     <link rel="stylesheet" type="text/css" href="../css/post_style.css">
  
-    <title>'."post".$page_name.'</title>
+    <title>'.$title .'</title>
 </head>
 <body>
 <?php

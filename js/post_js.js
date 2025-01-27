@@ -90,25 +90,27 @@ return postContent;
  })},
 
 get postInteraction() {
-return  this.getPosts().map(({id}) => {
+return  this.getPosts().map(({id, title}) => {
+let postURL = title.replaceAll(/[0-9]/gim, "-").replaceAll(/\s/gim, "-").toLowerCase();
+let map = {"ą":"a","ł":"l", "ć":"c", "ę":"e", "ó":"o", "ś":"s", "ź":"z" ,"ż":"z" ,"ń":"n","?":"","!":"","(":"", ")":"",",":"",".":""};
+const newPostURL = postURL.replaceAll(/[ąłćęóśźżń?!(),.]/gim,  char => map[char]).replaceAll("-–-", "-")
 
-
-let page_name = id;
+let page_name = newPostURL;
 let id_post = id;
 
 let fomrData = new FormData();
 
 fomrData.append("page_name",page_name);
 fomrData.append("id_post",id_post);
+fomrData.append("title",title);
 
-
-
+document.querySelector('.page_name').value = page_name;
 fetch("../blog/configuration_post.php",
   {
     method: "POST",
     body: fomrData
-  }
-)
+  })
+
 
 let post_background = document.querySelector(`.post_background${id}`);
 let post_text_click = document.querySelector(`.post_text_click${id}`);
@@ -123,7 +125,7 @@ if(window.matchMedia("(max-width:850px)").matches ){
 
 
 
-      if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post${id}.php`)
+      if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/${newPostURL}.php`)
         {
           if (post_display) { post_display.style.height = "100%"};
           if (post_display_configuration) { post_display_configuration.style.height = "100%"};
@@ -155,7 +157,7 @@ else
 post_text_click.style.overflow = "hidden";
 post_text_click.style.textOverflow  = "ellipsis";
 post_text_click.style.whiteSpace  = "nowrap";
-if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/post${id}.php`)
+if(window.location.href ===  `https://optivai.pl/optivai_blog/blog/${newPostURL}.php`)
   {   
 if (post_display) { post_display.style.height = "100%"};
 if (post_display_configuration) { post_display_configuration.style.height = "100%"};

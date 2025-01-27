@@ -3,12 +3,13 @@ ob_start();
 require "../db/config/config.php";
 try{
 $id_post = $_POST['id_post'];
+$page_name = $_POST['page_name'];
 
 if(!empty($id_post ) )
 {
 
 
-    unlink('post'. $id_post . '.php');
+    unlink($page_name . '.php');
 
 
   
