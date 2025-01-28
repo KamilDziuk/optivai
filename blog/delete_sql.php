@@ -1,7 +1,13 @@
 <?php
 ob_start();
 require "../db/config/config.php";
+require "db_queries/get_password_sql.php";
 try{
+ 
+    
+    $password = $_POST['password'];
+    
+      if(   $key["password_form"] === $password  ) {
 $id_post = $_POST['id_post'];
 $page_name = $_POST['page_name'];
 
@@ -29,6 +35,7 @@ $stmt = null;
 $pdo = null;
 header('Location: configuration_post.php'); 
 die();
+}
 }
 else
 {

@@ -1,8 +1,13 @@
 <?php
 ob_start();
 require "../../db/config/config.php";
-
+require "get_password_sql.php";
 try{
+
+
+$password = $_POST['password'];
+
+  if(   $key["password_form"] === $password  ) {
 $main_text = $_POST['main_text'];
 $id_post = $_POST['id_post'];
 
@@ -17,6 +22,11 @@ $stmt = null;
 $pdo = null;
 header('Location: ../configuration_post.php '); 
 die();
+  }
+  else
+{
+    header('Location: ../configuration_post.php?error=$em');
+}
 }
 catch(PDOException $e)
 {

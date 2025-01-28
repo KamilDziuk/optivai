@@ -15,8 +15,11 @@
 ?>
 
 <div id="form_box">
+
+
 <h3> Adding post</h3> 
 <form action="db_queries/add_sql.php" method="POST"  enctype="multipart/form-data" >
+<input type="password"   name="password"  placeholder="Password" >
 <textarea type="text" class="title" name="title" placeholder="Tytle"></textarea>
 <textarea   class="main_text " name="main_text"  placeholder="Main text"></textarea>
 <input type="file"  class="image" name="image" > 
@@ -26,6 +29,7 @@
 
 <h3>Remove post</h3>
 <form action="delete_sql.php" method="POST">
+<input type="password"   name="password" placeholder="Password" >
 <input type="text" class="id_post" name="id_post"  placeholder="id">
 <input type="text" class="page_name" name="page_name"  placeholder="page_name">
 <input type="submit" value="Delete post">
@@ -34,6 +38,7 @@
 
 <h3> Update title post</h3>
 <form action="db_queries/update_title_sql.php" method="POST">
+<input type="password"   name="password"  placeholder="Password" >
 <input type="text" class="id_post" name="id_post"  placeholder="id">
 <textarea type="text" class="title" name="title" placeholder="Tytle"></textarea>
 <input type="submit" value="Update title"><br>
@@ -41,6 +46,7 @@
 
 <h3>Update main text  post</h3>
 <form action="db_queries/update_main_text_sql.php" method="POST">
+  <input type="password"   name="password"  placeholder="Password" >
 <input type="text" class="id_post" name="id_post" placeholder="id">
 
 <textarea   class="main_text  update_main_text" name="main_text"  placeholder="Main text"></textarea>

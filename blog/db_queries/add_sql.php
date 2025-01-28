@@ -1,7 +1,15 @@
 <?php
+
 ob_start();
+
 require "../../db/config/config.php";
+require "get_password_sql.php";
 try{
+
+    
+    $password = $_POST['password'];
+    
+      if(   $key["password_form"] === $password  ) {
 $title = $_POST['title'];
 $main_text = $_POST['main_text'];
 $post_image = $_POST['post_image'];
@@ -31,7 +39,10 @@ $stmt = null;
 $pdo = null;
 header('Location: ../configuration_post.php');
 exit();
+
 }
+
+      }
 else
 {
     header('Location: ../configuration_post.php?error=$em');
@@ -43,6 +54,7 @@ catch(PDOException $e)
  echo "<br>". $e -> getMessage(). "<br> ";
 };
 ob_end_flush();
+
 ?>
 
 
