@@ -21,7 +21,7 @@ Optivai is a simple blog system built using the following technologies:
 - A "Back" button allows users to return to the list of posts.  
 
 ## Demo  
-The blog is available online at: [https://optivai.pl/blog/](https://optivai.pl/blog/).  
+The blog is available online at: [https://optivai.pl/blog/](https://optivai.pl/blog/), [https://optivai.pl/blog-configuration](https://optivai.pl/blog-configuration).  
 
 ## Author  
 The project was created by **Kamil Dziuk**.  
