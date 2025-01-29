@@ -46,7 +46,7 @@ let postContent = `
 <img class="images${id}  images "  src="upload_image/images/${image}">
 <div class="post_title post_title${id}"> ${title}</div>
 <div  class="post_text post_text_click${id}">  ${main_text}</div>
-<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post${id}.php" class="read_text read${id}">Read more...</a> 
+<a id="post_link"  class="read_text read${id}"  target="_blank" >Read more...</a
 
 <div  class="post_date ">${date}</div>
 </div>
@@ -57,14 +57,16 @@ return postContent;
 
 //Open post client
 get getOpenPostsClient() {
+
   return this.getPosts()
   .map(({ id, image, title, main_text ,date }) => {  
+  
   let postContent = `
   <div class ="post  post_background${id}">
   <img class="images${id}  images "  src="upload_image/images/${image}">
   <div class="post_title post_title${id}"> ${title}</div>
   <div  class="post_text post_text_click${id}">  ${main_text}</div>
-  <a target="_blank"  href="https://optivai.pl/blog/"  class="read_text" style ="color: red;">Back...</a> 
+  <a target="_blank"  href="http://localhost/optivai/blog/newPostURL.php"  class="read_text" style ="color: red;">Back...</a> 
   <div  class="post_date ">${date}</div>
   </div>
   `;  
@@ -76,13 +78,14 @@ get getOpenPostsClient() {
 get getPostsConfiguration() {
 return this.getPosts()
 .map(({ id, image,  title, main_text ,date }) => {  
+  
 let postContent = ` 
 
 <div class ="post   post_background${id}" > 
 <img class="images${id}  images "  src="upload_image/images/${image}">
 <div class=" post_title post_title${id}"> ID: ${id} <br> Title: ${title}</div>
 <div  class="post_text post_text_click${id}">Text: ${main_text}</div>
-<a  target="_blank" href="https://optivai.pl/optivai_blog/blog/post${id}.php"  class="read_text read${id}">Read more...</a> 
+<a id="post_link"  class="read_text read${id}"  target="_blank" >Read more...</a> 
 <div  class="post_date ">Date: ${date}</div>
 </div>`;
 
@@ -91,11 +94,23 @@ return postContent;
 
 get postInteraction() {
 return  this.getPosts().map(({id, title}) => {
+  
 let postURL = title.replaceAll(/[0-9]/gim, "-").replaceAll(/\s/gim, "-").toLowerCase();
 let map = {"ą":"a","ł":"l", "ć":"c", "ę":"e", "ó":"o", "ś":"s", "ź":"z" ,"ż":"z" ,"ń":"n","?":"","!":"","(":"", ")":"",",":"",".":""};
-const newPostURL = postURL.replaceAll(/[ąłćęóśźżń?!(),.]/gim,  char => map[char]).replaceAll("-–-", "-")
+const newPostURL = postURL.replaceAll(/[ąłćęóśźżń?!(),.]/gim,  char => map[char]).replaceAll("-–-", "-");
+
+
+if(post_display){document.querySelector(`#post_link`).href =`https://optivai.pl/optivai_blog/blog/${newPostURL}.php`
+ 
+}
+
+else   if(post_display_configuration){document.querySelector(`#post_link`).href =`https://optivai.pl/optivai_blog/blog/${newPostURL}.php`}
+
 
 let page_name = newPostURL;
+  
+
+
 let id_post = id;
 
 let fomrData = new FormData();
@@ -104,7 +119,7 @@ fomrData.append("page_name",page_name);
 fomrData.append("id_post",id_post);
 fomrData.append("title",title);
 
-document.querySelector('.page_name').value = page_name;
+if (post_display_configuration) {document.querySelector('.page_name').value = page_name};
 fetch("../blog/configuration_post.php",
   {
     method: "POST",
@@ -197,4 +212,3 @@ if(post_display){ post_display.innerHTML = getPost.getPostsClient.join('\n');get
 if(open_post_display){ open_post_display.innerHTML = getPost.getOpenPostsClient.join('\n');getPost.postInteraction};
 
 if(post_display_configuration){post_display_configuration.innerHTML = getPost.getPostsConfiguration.join('\n');getPost.postInteraction};
-

@@ -1,5 +1,5 @@
 <?php
-   $sql_password = "SELECT password_example FROM password_example";
+   $sql_password = "SELECT password_form_example  FROM password_example";
 
    $stmt_password = $pdo -> prepare($sql_password);
    
