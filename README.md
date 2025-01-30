@@ -1,5 +1,5 @@
 #  Optivai – Blog System  
-![presentation](image/presentation.gif)
+![presentation](blog/image/presentation.gif)
 Optivai is a simple blog system built using the following technologies:  
 - **JavaScript** – for dynamic interface functionality,  
 - **PHP** – for server-side logic and database interactions,  
